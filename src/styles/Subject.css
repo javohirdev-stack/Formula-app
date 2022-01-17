@@ -1,0 +1,22 @@
+.Subject{
+    width: 100%;
+    height: 100vh;
+    padding: 20px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.Subject .leftBlok{
+    width: 20%;
+    height: 80vh;
+    background: #fff;
+    border-radius: 8px;
+    margin-top: 80px;
+}
+
+.Subject .rightBlok{
+    background: #fff;
+    border-radius: 8px;
+    width: 78%;
+    height: 80vh;
+    margin-top: 80px;
+}

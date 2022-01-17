@@ -32,3 +32,19 @@ body {
  border: 2px solid #ffe984;
  background: transparent;
 }
+
+/* =======ball ============ */
+
+.header .Ball span{
+    padding: 10px 15px;
+    
+    backdrop-filter: blur(2px);
+    border-radius: 8px;
+    margin: 0 10px;
+}
+.header .Ball .xato{
+    background: rgba(255, 0, 0, 0.904);
+}
+.header .Ball .togri{
+    background: rgb(4, 238, 4);
+}
