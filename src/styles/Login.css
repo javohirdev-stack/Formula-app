@@ -3,7 +3,16 @@
     width: 420px;
     height: 450px;
 }
-
+.Login{
+    width: 100%;
+    overflow: hidden !important;
+    height: 100vh;
+}
+/* ============================ */
+.special-label{
+    display: none;
+}
+/* ================================ */
 .Login .login_blok {
     width: 123%;
     height: 100vh;
@@ -11,7 +20,8 @@
     color: black;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
+    padding-bottom: 100px;
 }
 
 .Login .login_blok .logins {
@@ -32,4 +42,27 @@
 .Login .login_blok .logins span {
     font-size: 13px;
     margin-top: 25px;
+}
+
+.Login .login_blok .logins .sendLogin {
+    padding: 10px 0px;
+    background: #5254f1;
+    border-radius: 8px;
+    color: #fff;
+    margin-top: 20px;
+    border: none;
+    outline: none;
+}
+/* ==================media 1200px======================== */
+/* ==================media 1200px======================== */
+@media (max-width:1200px){
+    .Login .login_blok {
+        width: 130%;
+        height: 100vh;
+    }
+    .Login .login_blok .logins {
+        width: 356px;
+        display: flex;
+        flex-direction: column;
+    }
 }

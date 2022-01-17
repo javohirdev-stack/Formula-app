@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Header from "./Header";
 import '../styles/Login.css'
+import ReactPhoneInput from 'react-phone-input-2'
 const Login = () => {
     const [phoneuz, setPhoneuz] = useState()
     const [h, setH]=useState()
@@ -49,6 +50,9 @@ const Login = () => {
                                 />
                                 <span>Parol</span>
                                 <input type="password" />
+                                <button className='sendLogin'>
+                                    Kirish
+                                </button>
                             </div>
 
                         </div>
