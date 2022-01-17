@@ -49,10 +49,18 @@
     background: #5254f1;
     border-radius: 8px;
     color: #fff;
-    margin-top: 20px;
-    border: none;
+    margin-top: 30px;
+    border: 3px solid transparent;
     outline: none;
+    transition: 0.30s ease-in;
+    margin-bottom: 20px;
 }
+.Login .login_blok .logins .sendLogin:hover {
+  border: 3px solid #5254f1 ;
+  background: transparent;
+  color: #5254f1;
+}
+
 /* ==================media 1200px======================== */
 /* ==================media 1200px======================== */
 @media (max-width:1200px){
