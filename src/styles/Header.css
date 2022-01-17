@@ -1,0 +1,34 @@
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background: #f9f6f9;
+    font-family: 'Heebo', sans-serif;
+}
+
+.header {
+    width: 100%;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(110, 120, 146, 0.15);
+    background: #fff;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    backdrop-filter: blur(6px);
+    align-items: center;
+}
+
+.header nav button {
+    background: #ffe984;
+    padding: 10px 26px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 700;
+    outline: none;
+    border: 2px solid transparent;
+    transition: 0.30s ease-in;
+}
+.header nav button:hover{
+ border: 2px solid #ffe984;
+ background: transparent;
+}

@@ -1,0 +1,35 @@
+.Login .d_None img {
+    margin-top: 160px;
+    width: 420px;
+    height: 450px;
+}
+
+.Login .login_blok {
+    width: 123%;
+    height: 100vh;
+    background: #fff;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Login .login_blok .logins {
+    width: 430px;
+    display: flex;
+    flex-direction: column;
+}
+
+.Login .login_blok .logins input {
+    padding: 10px 15px;
+    background: #f9f6f9;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.Login .login_blok .logins span {
+    font-size: 13px;
+    margin-top: 25px;
+}
