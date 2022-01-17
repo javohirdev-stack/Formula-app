@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Header.css'
 
-const Header = ({ Ball }) => {
-   
+const Header = ({ Ball, game }) => {
+
     return (<>
         <header className="header">
             <nav>
@@ -14,18 +14,26 @@ const Header = ({ Ball }) => {
                                 <img src="	https://new.prep.uz/static/media/logo.6fc634c2.svg" alt="logo" />
                             </Link>
                         </div>
-                        {Ball ?
+                        {game ?
                             <div className='Ball'>
                                 <span className='xato'>{Ball.title}</span>
                                 <span className="togri">{Ball.title}</span>
                             </div>
-                       :<div></div> }
-                        <div>
-                            <Link to='/login'>
-                                <button className="kirish" >Kirish </button>
-                            </Link>
+                            : <div></div>}
+                        {Ball ?
+                            <>
+                                <div className='avatar'> <i className="far fa-user-circle"></i> </div>
+                            </>
 
-                        </div>
+
+                            :
+                            <div>
+                                <Link to='/login'>
+                                    <button className="kirish" >Kirish </button>
+                                </Link>
+                            </div>
+                        }
+
                     </div>
                 </div>
             </nav>

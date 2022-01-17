@@ -28,23 +28,49 @@ body {
     border: 2px solid transparent;
     transition: 0.30s ease-in;
 }
-.header nav button:hover{
- border: 2px solid #ffe984;
- background: transparent;
+
+.header nav button:hover {
+    border: 2px solid #ffe984;
+    background: transparent;
 }
 
 /* =======ball ============ */
 
-.header .Ball span{
+.header .Ball span {
     padding: 10px 15px;
-    
+
     backdrop-filter: blur(2px);
     border-radius: 8px;
     margin: 0 10px;
 }
-.header .Ball .xato{
+
+.header .Ball .xato {
     background: rgba(255, 0, 0, 0.904);
 }
-.header .Ball .togri{
+
+.header .Ball .togri {
     background: rgb(4, 238, 4);
+}
+
+.header .avatar .far {
+    font-size: 40px;
+    color: #5254f1;
+}
+
+.header .avatar .far:hover {
+
+    color: #5255f19d;
+}
+
+@media (max-width:500px) {
+    .header {
+        padding: 15px 20px;
+    }
+    .header .avatar .far {
+        font-size: 25px;
+    }
+    .header nav img{
+        width: 100px;
+    }
+
 }

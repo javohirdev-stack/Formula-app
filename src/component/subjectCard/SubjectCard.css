@@ -1,0 +1,46 @@
+.subCard .Card {
+    width: 100%;
+    height: 196px;
+    border: 1px solid gainsboro;
+    border-radius: 8px;
+    margin: 15px 0;
+    overflow: hidden;
+    text-align: center;
+}
+
+.subCard .Card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.subCard .Card .link button {
+    text-decoration: none;
+    background: #5254f1;
+    border-radius: 8px;
+    width: 100%;
+    border: none;
+    padding: 10px 15px;
+    color: white;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+.subCard .Card .link button:hover {
+    text-decoration: none;
+    background: #2124a7;
+}
+
+@media (max-width:500px){
+    .subCard .Card {
+        height: 150px;
+    }
+    .subCard .Card img {
+        height: 116px;
+        object-fit: cover;
+    }
+    .subCard .Card .link button {
+    
+        padding: 5px 8px;
+    }
+    
+}

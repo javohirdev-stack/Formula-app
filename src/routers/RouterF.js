@@ -1,5 +1,6 @@
 
 import {Route, Routes} from 'react-router-dom'
+import Game from '../component/Game';
 import Home from '../component/Home';
 import Login from '../component/Login';
 import NotFound from '../component/NotFound';
@@ -10,6 +11,7 @@ const RouterF=()=>{
      <Route  path={'/'} element={<Home/>} />
      <Route path={'/login'} element={<Login/>} />
      <Route path={'/subject'} element={<Subject/>} />
+     <Route path={'/subject/:name'} element={<Game/>} />
      <Route path={'/:name'} element={<NotFound/>} />
      </Routes>
     </>);

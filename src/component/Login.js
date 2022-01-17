@@ -15,11 +15,11 @@ const Login = () => {
             <div className="container">
                 <div className="row">
 
-                    <div className="col-lg-6 d_None">
+                    <div className="col-lg-6 col-md-12 d_None">
                         <img src="	https://new.prep.uz/static/media/login.dced2258.svg" alt="" />
                     </div>
 
-                    <div className="col-lg-6">
+                    <div className="col-lg-6 col-md-12 d_None2">
                         <div className="login_blok">
 
                             {loginActiv === 0
@@ -73,7 +73,9 @@ const Login = () => {
                                     <h5>Ro'yhatdan o'tganmisiz? 
                                         <span
                                             style={{ cursor: 'pointer' }}
-                                            onClick={() => setLoginActiv(1)}>Ro'yhatdan o'ting </span></h5>
+                                            onClick={() => setLoginActiv(1)}>Ro'yhatdan o'ting </span>   
+                                             </h5>
+                                         
                                 </div>
 
                                 : loginActiv === 1
@@ -202,6 +204,7 @@ const Login = () => {
 
 
                         </div>
+
                     </div>
 
                 </div>

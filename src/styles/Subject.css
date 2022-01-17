@@ -1,22 +1,95 @@
-.Subject{
+.Subject {
     width: 100%;
     height: 100vh;
     padding: 20px 20px;
     display: flex;
     justify-content: space-between;
 }
-.Subject .leftBlok{
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 20px;
+
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(207, 207, 207);
+    border-radius: 10px;
+}
+
+.Subject .leftBlok {
     width: 20%;
     height: 80vh;
     background: #fff;
     border-radius: 8px;
     margin-top: 80px;
+    overflow-y: scroll;
 }
 
-.Subject .rightBlok{
+.Subject .rightBlok {
     background: #fff;
     border-radius: 8px;
     width: 78%;
     height: 80vh;
     margin-top: 80px;
+    padding: 15px;
+    padding-top: 50px;
+  
+    overflow-y: scroll;
+}
+
+.Subject .leftBlok ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    text-align: justify !important;
+}
+
+.Subject .leftBlok ul li {
+    margin-left: -40px;
+    font-size: 20px;
+    color: black;
+    font-weight: 500;
+    list-style: none;
+    background: burlywood;
+    border-radius: 8px;
+    text-align: center;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+@media (max-width:500px) {
+    .Subject .rightBlok {
+        background: #fff;
+        border-radius: 8px;
+        width: 68%;
+        height: 80vh;
+        margin-top: 80px;
+        padding: 15px;
+        overflow-y: scroll;
+    }
+
+    .Subject .leftBlok {
+        width: 30%;
+        height: 80vh;
+    }
+
+    .Subject .leftBlok ul {
+        display: flex;
+        flex-direction: column;
+        text-align: justify !important;
+    }
+
+    .Subject .leftBlok ul li {
+        font-size: 20px;
+        color: black;
+        font-weight: 500;
+        list-style: none;
+        background: burlywood;
+        border-radius: 8px;
+        text-align: center;
+        margin-left: -40px;
+        margin-top: 10px;
+    }
 }

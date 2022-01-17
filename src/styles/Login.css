@@ -3,15 +3,18 @@
     width: 420px;
     height: 450px;
 }
-.Login{
+
+.Login {
     width: 100%;
     overflow: hidden !important;
     height: 100vh;
 }
+
 /* ============================ */
-.special-label{
+.special-label {
     display: none;
 }
+
 /* ================================ */
 .Login .login_blok {
     width: 123%;
@@ -22,12 +25,16 @@
     justify-content: center;
     align-items: flex-end;
     padding-bottom: 100px;
+    box-sizing: border-box;
 }
 
 .Login .login_blok .logins {
     width: 430px;
     display: flex;
     flex-direction: column;
+}
+.Login .login_blok .logins h4{
+    font-size: 20px;
 }
 
 .Login .login_blok .logins input {
@@ -44,6 +51,15 @@
     margin-top: 25px;
 }
 
+.Login .login_blok .logins h5 span {
+    margin-left: 10px;
+    font-size: 16px;
+    color: gray;
+    border-bottom: 2px solid gray;
+    border-width: 0px;
+    transition: 040s ease-in;
+}
+
 .Login .login_blok .logins .sendLogin {
     padding: 10px 0px;
     background: #5254f1;
@@ -55,21 +71,82 @@
     transition: 0.30s ease-in;
     margin-bottom: 20px;
 }
+
 .Login .login_blok .logins .sendLogin:hover {
-  border: 3px solid #5254f1 ;
-  background: transparent;
-  color: #5254f1;
+    border: 3px solid #5254f1;
+    background: transparent;
+    color: #5254f1;
 }
 
 /* ==================media 1200px======================== */
 /* ==================media 1200px======================== */
-@media (max-width:1200px){
+@media (max-width:1200px) {
     .Login .login_blok {
         width: 130%;
         height: 100vh;
     }
+
     .Login .login_blok .logins {
         width: 356px;
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+
+
+/* ==================media 992px======================== */
+@media (max-width:992px){
+    .Login .d_None img{
+        width: 100%;
+    }
+    .Login .d_None2{
+        position: absolute;
+        left: 0;
+    }
+    .Login .d_None2 .login_blok{
+        width: 100%;
+        background: rgba(255, 255, 255, 0.658);
+        backdrop-filter: blur(4px);
+    }
+    .Login .d_None img {
+        margin-top: 160px;
+        width: 600px;
+        height: 500px;
+    }
+    .Login .login_blok .logins {
+        width: 500px;
+    }
+  
+}
+
+@media (max-width:576px){
+    .Login .d_None img {
+        margin-top: 160px;
+        width: 400px;
+        height: 500px;
+    }
+    .Login .login_blok .logins {
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+    }
+    .Login {
+        width: 100%;
+        overflow: scroll !important;
+        height: 100vh;
+    }
+}
+
+@media (max-width:440px){
+    .Login .d_None img {
+        margin-top: 150px;
+        width: 360px;
+        height: 500px;
+    }
+    .Login .login_blok .logins {
+        width: 360px;
         display: flex;
         flex-direction: column;
     }
