@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import '../styles/Header.css'
 
 const Header = ({ Ball, game }) => {
-
+    const [logout, setLogOut] = useState(false)
     return (<>
         <header className="header">
             <nav>
@@ -14,6 +14,11 @@ const Header = ({ Ball, game }) => {
                                 <img src="	https://new.prep.uz/static/media/logo.6fc634c2.svg" alt="logo" />
                             </Link>
                         </div>
+                        <div>
+                            <Link to='/subject'>Subject</Link>
+                            <Link to='/subject/Matematika'>Game</Link>
+
+                        </div>
                         {game ?
                             <div className='Ball'>
                                 <span className='xato'>{Ball.title}</span>
@@ -22,7 +27,18 @@ const Header = ({ Ball, game }) => {
                             : <div></div>}
                         {Ball ?
                             <>
-                                <div className='avatar'> <i className="far fa-user-circle"></i> </div>
+                                <div className='avatar'> <i
+                                    onClick={() => setLogOut(!logout)}
+                                    className="far fa-user-circle"></i>
+                                    {logout === true ?
+                                        <span>
+                                            <i class="fas fa-sign-out-alt"></i>Log Out
+                                        </span>
+                                        
+                                        : <i></i>
+                                    }
+                                </div>
+
                             </>
 
 

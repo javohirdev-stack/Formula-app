@@ -1,7 +1,8 @@
 import Header from "./Header";
 import '../styles/Subject.css'
 import SubjectCard from "./subjectCard/SubjectCard";
-const Subject = () => {
+const Subject = ({Left}) => {
+
     const info =[
         {
             id:1,
@@ -24,9 +25,8 @@ const Subject = () => {
     return (<>
         <Header Ball={info} />
 
-        <section className="Subject">
-            <div className="leftBlok"></div>
-
+        <section className="Subject Subje">
+           
             <div className="rightBlok">
                 <div className="row">
                  {info.map((item, index)=>(
