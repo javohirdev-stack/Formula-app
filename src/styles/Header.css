@@ -8,7 +8,7 @@ body {
 
 .header {
     width: 100%;
-    padding: 20px 0;
+    padding: 10px 0;
     border-bottom: 1px solid rgba(110, 120, 146, 0.15);
     background: #fff;
     position: fixed;
@@ -85,7 +85,7 @@ body {
 
 
 /* ==================Medi 500px ===================== */
-@media (max-width:500px) {
+@media (max-width:576px) {
     .header {
         padding: 15px 20px;
     }
@@ -121,5 +121,8 @@ body {
         border-radius: 5px;
         align-items: center;
     }
-
+  .header nav button{
+      padding: 5px 10px;
+      font-size: 15px;
+  }
 }

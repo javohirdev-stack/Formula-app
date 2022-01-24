@@ -11,14 +11,10 @@ const Header = ({ Ball, game }) => {
                     <div className="row d-flex justify-content-between align-items-center">
                         <div>
                             <Link to='/'>
-                                <img src="	https://new.prep.uz/static/media/logo.6fc634c2.svg" alt="logo" />
+                                <img style={{width:'60px'}} src="https://i.pinimg.com/originals/92/cb/5c/92cb5cc5b5e1c4aae4c052ed0696dcb2.png" alt="logo" />
                             </Link>
                         </div>
-                        <div>
-                            <Link to='/subject'>Subject</Link>
-                            <Link to='/subject/Matematika'>Game</Link>
-
-                        </div>
+                     
                         {game ?
                             <div className='Ball'>
                                 <span className='xato'>{Ball.title}</span>
@@ -26,6 +22,7 @@ const Header = ({ Ball, game }) => {
                             </div>
                             : <div></div>}
                         {Ball ?
+                        
                             <>
                                 <div className='avatar'> <i
                                     onClick={() => setLogOut(!logout)}

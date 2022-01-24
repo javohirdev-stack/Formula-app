@@ -76,6 +76,7 @@
     border: 3px solid #5254f1;
     background: transparent;
     color: #5254f1;
+ 
 }
 
 /* ==================media 1200px======================== */
@@ -136,6 +137,9 @@
         width: 100%;
         overflow: scroll !important;
         height: 100vh;
+    }
+    .Login input{
+        background: #ced4da !important;
     }
 }
 
