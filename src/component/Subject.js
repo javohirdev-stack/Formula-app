@@ -33,7 +33,7 @@ const Subject = ({ Left }) => {
                 <div className='loading'></div>
                 <i className="fas fa-user-graduate"></i>
             </div>
-        :<div></div>    
+            : <div></div>
         }
         <section className="Subject Subje">
 

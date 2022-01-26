@@ -16,7 +16,7 @@ const Login = () => {
                 <div className="row">
 
                     <div className="col-lg-6 col-md-12 d_None">
-                        <img src="	https://new.prep.uz/static/media/login.dced2258.svg" alt="" />
+                        <img style={{objectFit:'cover'}} src="https://www.pngitem.com/pimgs/m/623-6230347_registration-online-vector-png-transparent-png.png" alt="" />
                     </div>
 
                     <div className="col-lg-6 col-md-12 d_None2">

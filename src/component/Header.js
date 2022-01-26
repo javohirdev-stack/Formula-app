@@ -11,7 +11,7 @@ const Header = ({ Ball, game }) => {
                     <div className="row d-flex justify-content-between align-items-center">
                         <div>
                             <Link to='/'>
-                                <img style={{width:'60px'}} src="https://i.pinimg.com/originals/92/cb/5c/92cb5cc5b5e1c4aae4c052ed0696dcb2.png" alt="logo" />
+                                <img style={{width:'100px'}} src="https://avatars.mds.yandex.net/i?id=b9f54403f379b761cd449fd69675174b-4968891-images-thumbs&n=13" alt="logo" />
                             </Link>
                         </div>
                      

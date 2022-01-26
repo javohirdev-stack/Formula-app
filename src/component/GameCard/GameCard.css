@@ -1,7 +1,7 @@
 .GameCard {
     width: 100%;
     height: 150px;
-    border-radius: 20px;
+    border-radius: 6px;
     background: gray;
     margin: 10px 0;
     overflow: hidden;

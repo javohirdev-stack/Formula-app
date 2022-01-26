@@ -112,7 +112,9 @@ const Game = () => {
                         </div>
 
                     ))}
-
+                    <div className="col-lg-12">
+                        <button className='btn btn-info'>Yuborish</button>
+                    </div>
                 </div>
             </div>
 
