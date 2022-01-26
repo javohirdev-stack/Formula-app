@@ -43,6 +43,11 @@
     overflow-y: scroll;
 }
 
+.Subject .rightBlok .btns{
+    background: blue;
+    color: white;
+    margin-top: 20px;
+}
 
 .quest {
     width: 98%;

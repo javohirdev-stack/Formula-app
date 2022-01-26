@@ -1,11 +1,23 @@
 import Header from "./Header";
 import '../styles/Home.css'
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 const Home = () => {
+    const [links, setLinks] = useState('')
 
+    useEffect(() => {
+        TokenT()
+    }, [])
+
+    const TokenT = () => {
+        if (localStorage.getItem('token')) {
+            setLinks('/subject')
+        } else {
+            setLinks('/login')
+        }
+    }
     function opacity() {
-        document.getElementById('startBlok').style.display='none'
+        document.getElementById('startBlok').style.display = 'none'
     }
     setTimeout(() => {
         opacity()
@@ -22,8 +34,9 @@ const Home = () => {
 
             <div className="text">
                 <h1>To'g'risi, ko'proq qog'oz va daftar olib, keyin boshlang.</h1>
-                <Link to='/subject'>
-                    <button className={'tayyorman'}>Tayyorman</button>
+                <Link to={links}>
+                    <button
+                        className={'tayyorman'}>Tayyorman</button>
                 </Link>
             </div>
 

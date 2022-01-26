@@ -23,9 +23,9 @@
     color: black;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
-    padding-bottom: 100px;
+    align-items: center;
     box-sizing: border-box;
+   padding-top: 50px;
 }
 
 .Login .login_blok .logins {
@@ -37,9 +37,13 @@
     font-size: 20px;
 }
 
+.Login .login_blok .logins h5{
+    font-size: 17px;
+}
+
 .Login .login_blok .logins input {
-    padding: 10px 15px;
-    background: #f9f6f9;
+    padding: 5px 15px;
+    background: #eceaec;
     border: none;
     outline: none;
     border-radius: 8px;
@@ -61,23 +65,43 @@
 }
 
 .Login .login_blok .logins .sendLogin {
-    padding: 10px 0px;
+    padding: 7px 0px;
     background: #5254f1;
     border-radius: 8px;
     color: #fff;
     margin-top: 30px;
     border: 3px solid transparent;
     outline: none;
-    transition: 0.30s ease-in;
+    transition: 0.60s ease-in;
     margin-bottom: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.Login .login_blok .logins .sendLogin:hover {
+.sendLogin .loader{ 
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid white;
+    animation: btns 0.30s linear infinite;
+    border-bottom: 2px solid transparent;
+}
+@keyframes btns {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+/* .Login .login_blok .logins .sendLogin:hover {
     border: 3px solid #5254f1;
     background: transparent;
     color: #5254f1;
- 
-}
+} */
 
 /* ==================media 1200px======================== */
 /* ==================media 1200px======================== */
@@ -119,6 +143,9 @@
     .Login .login_blok .logins {
         width: 500px;
     }
+    .Login input{
+        background: #ced4da !important;
+    }
   
 }
 
@@ -128,30 +155,60 @@
         width: 400px;
         height: 500px;
     }
+    .Login .login_blok{
+        padding-bottom: 20px;
+    }
     .Login .login_blok .logins {
         width: 400px;
         display: flex;
         flex-direction: column;
+    }
+    .Login .login_blok .logins h2{
+        font-size: 25px;
+    }
+    .Login .login_blok .logins h4{
+        font-size: 20px;
     }
     .Login {
         width: 100%;
         overflow: scroll !important;
         height: 100vh;
     }
-    .Login input{
-        background: #ced4da !important;
+    .Login .login_blok .logins input{
+        padding: 5px ;
+    }
+    .Login .login_blok .logins .sendLogin{
+        padding: 5px;
     }
 }
 
 @media (max-width:440px){
     .Login .d_None img {
         margin-top: 150px;
-        width: 360px;
+        width: 300px;
         height: 500px;
     }
     .Login .login_blok .logins {
         width: 360px;
         display: flex;
         flex-direction: column;
+    }
+}
+@media (max-width:370px){
+    .Login .d_None img {
+        margin-top: 150px;
+        width: 250px;
+        height: 500px;
+    }
+    .Login .login_blok .logins {
+        width:250px;
+        display: flex;
+        flex-direction: column;
+    }
+    .Login .login_blok .logins h2{
+        font-size: 20px;
+    }
+    .Login .login_blok .logins h4{
+        font-size: 16px;
     }
 }

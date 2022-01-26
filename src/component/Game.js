@@ -51,11 +51,9 @@ const Game = () => {
 
     //Ppost backend 
     const Pushs = () => {
-
         setPost([...Post, { id: javob, slug: savol }])
         setJavobTrue(false)
         setSavolTrue(false)
-
         document.getElementById(javob).classList.add('cheked')
         document.getElementById(indexs).innerHTML = formName
         document.getElementById(savol).classList.add('cheked')
@@ -63,8 +61,6 @@ const Game = () => {
 
     console.log(Post);
     return (<>
-
-       
         <Header Ball={statistica} game={statistica} />
         {loading === true
             ? <div className='startBlok'>
@@ -73,7 +69,6 @@ const Game = () => {
             </div>
         :<div></div>    
         }
-     
 
         {bildirish === true ? <div className='modal'> <div className='modal_blo'>
             <i className="fas fa-clipboard"></i>
@@ -113,7 +108,7 @@ const Game = () => {
 
                     ))}
                     <div className="col-lg-12">
-                        <button className='btn btn-info'>Yuborish</button>
+                        <button className='btn btns'>Yuborish</button>
                     </div>
                 </div>
             </div>

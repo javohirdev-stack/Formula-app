@@ -26,7 +26,7 @@ const Header = ({ Ball, game }) => {
                             <>
                                 <div className='avatar'> <i
                                     onClick={() => setLogOut(!logout)}
-                                    className="far fa-user-circle"></i>
+                                    className="far fa-user-circle">admin</i>
                                     {logout === true ?
                                         <span>
                                             <i class="fas fa-sign-out-alt"></i>Log Out
