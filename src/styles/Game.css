@@ -38,6 +38,7 @@
     outline: none;
     padding: 5px 20px;
     color: white;
+    cursor: pointer;
 }
 
 .cheked .chek{
@@ -64,6 +65,7 @@
     transition: 0.30s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     
 }
+
 .cheked li{
     color: white !important;
 }

@@ -29,6 +29,10 @@ const Game = () => {
 
     const [bildirish, setBildirish] = useState(true)
 
+    //error modal
+    const [errorModal, setErrorModal] = useState(false)
+
+
     // loader
     const [loading, setLoading]=useState(false)
     const { name } = useParams()
@@ -44,7 +48,11 @@ const Game = () => {
                 setQuest(res.data)
                 setLoading(false)
             })
+            .catch(er=>{
+                setErrorModal(true)
+                setLoading(false)
 
+            })
             setLoading(true)
     }
 
@@ -62,6 +70,14 @@ const Game = () => {
     console.log(Post);
     return (<>
         <Header Ball={statistica} game={statistica} />
+
+        {/* //errror modal  */}
+        {errorModal === true
+            ? <div onClick={()=> {setErrorModal(false); window.location = window.location.href} } className="modal"> <div className="modal_blo"><h1>Internet bilan muommo!</h1></div> </div>
+            : <div></div>
+        }
+
+
         {loading === true
             ? <div className='startBlok'>
                 <div className='loading'></div>

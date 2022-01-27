@@ -1,1 +1,1 @@
-export const Url="http://physics.dilshodbaxriddinov.uz/"
+export const Url="http://apiphysics.dilshodbaxriddinov.uz/"
