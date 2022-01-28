@@ -1,11 +1,24 @@
 .Home {
-    width: 100%;
+    width: 100% !important;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #fff;
+    background: url(https://www.learningpaths.in/wp-content/uploads/2018/06/matematika-01172017.jpg);
+    /* background-size: cover; */
+    backdrop-filter: blur(2px);
+    
 }
+.mask{
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.753);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
+}
+
 .Home .text{
     width: 700px;
     text-align: center;

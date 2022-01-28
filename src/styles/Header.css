@@ -95,7 +95,7 @@ body {
     }
 
     .header nav img {
-        width: 100px;
+        width: 80px !important;
     }
 
     /* ==========balllll============ */

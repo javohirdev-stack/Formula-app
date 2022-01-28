@@ -1,0 +1,220 @@
+.Profile {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+.Profile .LeftMenu {
+    width: 300px;
+    height: 100%;
+    background-color: white ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+
+}
+.rightmenu{
+    width: 100%;
+    padding-top: 70px;
+}
+
+.link {
+    font-size: 1.3rem;
+    color: black;
+    font-weight: 600;
+    list-style: none !important;
+    text-decoration: none !important;
+}
+
+.inactive {
+    color: blue;
+    font-size: 1.3rem;
+    font-weight: 600;
+    list-style: none !important;
+    text-decoration: none !important;
+}
+
+.LeftMenu ul li {
+    margin: 10px 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+.LeftMenu .menu {
+    display: none;
+}
+
+@media (max-width:1200px) {
+    .Profile .LeftMenu {
+        width: 200px;
+        height: 100%;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 100px;
+    }
+}
+
+.activ {
+    margin-left: 0 !important;
+}
+
+.activmenu {
+    margin-right: 0px !important;
+}
+
+/* ///////PROFILE============================== */
+
+
+
+.card {
+    border: none;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer
+}
+
+.card:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background-color: #E1BEE7;
+    transform: scaleY(1);
+    transition: all 0.5s;
+    transform-origin: bottom
+}
+
+.card:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background-color: blue;
+    transform: scaleY(0);
+    transition: all 0.5s;
+    transform-origin: bottom
+}
+
+.card:hover::after {
+    transform: scaleY(1)
+}
+
+.fonts {
+    font-size: 11px
+}
+
+.social-list {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    padding: 0
+}
+
+.social-list li {
+    padding: 10px;
+    color: blue;
+    font-size: 19px
+}
+
+.buttons button:nth-child(1) {
+    border: 1px solid blue !important;
+    color: blue;
+    height: 40px
+}
+
+.buttons button:nth-child(1):hover {
+    border: 1px solid blue !important;
+    color: #fff;
+    height: 40px;
+    background-color: blue
+}
+
+.buttons button:nth-child(2) {
+    border: 1px solid blue !important;
+    background-color: blue;
+    color: #fff;
+    height: 40px
+}
+
+@media (max-width:756px) {
+    .Profile .LeftMenu {
+        width: 180px;
+        position: absolute;
+        padding-top: 80px;
+        margin-left: -180px;
+        z-index: 100;
+        transition: 0.30s cubic-bezier(0.165, 0.84, 0.44, 1);
+        border-right: 2px solid rgba(128, 128, 128, 0.288);
+    }
+
+    .LeftMenu .menu {
+        display: block;
+        margin-right: -46px;
+        border: none;
+        font-size: 20px;
+        background-color: white;
+        padding: 0px 7px;
+        outline: none;
+        transition: 0.30s cubic-bezier(0.165, 0.84, 0.44, 1);
+        cursor: pointer;
+    }
+
+    .buton {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .link {
+        font-size: 1rem;
+    }
+
+    .inactive {
+
+        font-size: 1rem;
+    }
+}
+
+
+@media (max-width:576px) {
+    .Profile .LeftMenu {
+        padding-top: 62px;
+        width: 180px;
+        margin-left: -180px;
+    }
+
+    .LeftMenu .menu {
+        font-size: 18px;
+    }
+
+
+    .LeftMenu ul {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start !important;
+    }
+
+    .inactive,
+    .link {
+        color: blue;
+        font-size: 0.9rem;
+        font-weight: 600;
+        list-style: none !important;
+        text-decoration: none !important;
+    }
+
+    .link {
+        color: black;
+    }
+
+
+}

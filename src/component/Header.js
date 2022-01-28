@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Header.css'
 
-const Header = ({ Ball, game }) => {
+const Header = ({ Ball, game, prof }) => {
     const [logout, setLogOut] = useState(false)
     return (<>
         <header className="header">
@@ -21,19 +21,14 @@ const Header = ({ Ball, game }) => {
                                 <span className="togri">{Ball.title}</span>
                             </div>
                             : <div></div>}
-                        {Ball ?
+                        {Ball || prof?
                         
                             <>
-                                <div className='avatar'> <i
-                                    onClick={() => setLogOut(!logout)}
-                                    className="far fa-user-circle"></i>
-                                    {logout === true ?
-                                        <span>
-                                            <i class="fas fa-sign-out-alt"></i>Log Out
-                                        </span>
-                                        
-                                        : <i></i>
-                                    }
+                                <div className='avatar'> 
+                                <Link to='/profile'>
+                                <i className="far fa-user-circle"></i>
+                                </Link>
+                                   
                                 </div>
 
                             </>

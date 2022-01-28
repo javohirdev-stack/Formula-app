@@ -2,6 +2,8 @@ import Header from "./Header";
 import '../styles/Home.css'
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import MathHD from './MathHD.mp4'
+
 const Home = () => {
     const [links, setLinks] = useState('')
 
@@ -10,7 +12,7 @@ const Home = () => {
     }, [])
 
     const TokenT = () => {
-        if (localStorage.getItem('token')) {
+        if (!localStorage.getItem('token')) {
             setLinks('/subject')
         } else {
             setLinks('/login')
@@ -24,6 +26,8 @@ const Home = () => {
     }, 2000)
     return (<>
         <Header />
+
+
         {/* Game Strat blok */}
         <div id="startBlok" className='startBlok'>
             <div className='loading'></div>
@@ -32,12 +36,15 @@ const Home = () => {
         {/* Game Strat blok */}
         <main className="Home">
 
-            <div className="text">
-                <h1>To'g'risi, ko'proq qog'oz va daftar olib, keyin boshlang.</h1>
-                <Link to={links}>
-                    <button
-                        className={'tayyorman'}>Tayyorman</button>
-                </Link>
+            <div className="mask">
+                <div className="text">
+                    <h1>To'g'risi, ko'proq qog'oz va daftar olib, keyin boshlang.</h1>
+                    <Link to={links}>
+                        <button
+                            className={'tayyorman'}>Tayyorman</button>
+                    </Link>
+                </div>
+
             </div>
 
         </main>
