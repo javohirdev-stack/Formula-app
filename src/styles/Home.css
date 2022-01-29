@@ -28,6 +28,7 @@
     font-weight: 800;
     font-family: 'Heebo', sans-serif;
 }
+
 .Home .text button{
     border: none;
     outline: none;
@@ -57,7 +58,7 @@
     
     justify-content: center;
     align-items: center;
-    animation: opacity 2s linear;
+    animation: opacity 0.60s linear;
 }
 
 @keyframes opacity{

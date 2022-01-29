@@ -2,7 +2,7 @@ import Header from "./Header";
 import '../styles/Home.css'
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import MathHD from './MathHD.mp4'
+
 
 const Home = () => {
     const [links, setLinks] = useState('')
@@ -12,7 +12,7 @@ const Home = () => {
     }, [])
 
     const TokenT = () => {
-        if (!localStorage.getItem('token')) {
+        if (localStorage.getItem('token')) {
             setLinks('/subject')
         } else {
             setLinks('/login')
@@ -23,7 +23,7 @@ const Home = () => {
     }
     setTimeout(() => {
         opacity()
-    }, 2000)
+    }, 600)
     return (<>
         <Header />
 

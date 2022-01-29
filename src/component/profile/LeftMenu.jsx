@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import './Profile.css'
+
 const LeftMenu = () => {
     const [menu, setMenu] = useState(false)
     const [modal, setModal] = useState(false)
@@ -14,7 +14,7 @@ const LeftMenu = () => {
 
         {modal === true
             ? <div  className="modal"> <div className="modal_blo"><h1>Rostdan ham Hisobdan chiqasizmi?</h1>
-                <div>
+                <div className="mt-4">
                     <button style={{background:'red', marginRight:'20px'}} onClick={() => { setModal(false); setLogOut() }}>Ha</button>
                     <button onClick={() => setModal(false)}>Yoq</button>
                 </div>
@@ -37,7 +37,7 @@ const LeftMenu = () => {
                     <li className="headernavTsxt"> Profile</li>
                 </NavLink>
 
-                <NavLink exact className={({ isActive }) => (isActive ? 'inactive' : 'link')} to='/natija' >
+                <NavLink exact className={({ isActive }) => (isActive ? 'inactive' : 'link')} to='/results' >
                     <li className="headernavTsxt">Natija</li>
                 </NavLink>
 

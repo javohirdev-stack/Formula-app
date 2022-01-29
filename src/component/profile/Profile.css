@@ -5,7 +5,7 @@
 }
 
 .Profile .LeftMenu {
-    width: 300px;
+    width: 350px;
     height: 100%;
     background-color: white ;
     display: flex;
@@ -17,6 +17,14 @@
 .rightmenu{
     width: 100%;
     padding-top: 70px;
+    display: flex;
+    justify-content: center;
+    background: #f9f6f9;
+}
+.rightmenu .images{
+    width: 50%;
+    object-fit: contain;
+    
 }
 
 .link {
@@ -200,7 +208,7 @@
         width: 100%;
         display: flex;
         flex-direction: column;
-        align-items: flex-start !important;
+        align-items: center;
     }
 
     .inactive,

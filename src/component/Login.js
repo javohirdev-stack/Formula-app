@@ -6,7 +6,6 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { Url } from '../helpers/URL';
 
-import { Button, useToast } from '@chakra-ui/react'
 
 const Login = () => {
 
@@ -39,22 +38,22 @@ const Login = () => {
     const [loader, setLoader] = useState(false)
     const [loaders, setLoaders] = useState(false)
 
-
+    console.log(phoneuz)
     const LoginPost = () => {
 
         let b = true
-        
+
         if (phoneuz1.length === 0 || phoneuz1.length < 12) {
             b = false
             setErrorNumber1(true)
         }
-        if(pasword1.length<5){
-            b=false 
+        if (pasword1.length < 8|| pasword1.length===0) {
+            b = false
             setErrorPassword1(true)
         }
         if (b) {
             setLoaders(true)
-            axios.post(Url + "login", {
+            axios.post(Url + "login/", {
                 phone: phoneuz1,
                 password: pasword1
             })
@@ -77,7 +76,6 @@ const Login = () => {
     //SEND POST 
     const SendPost = () => {
         let b = true
-
         if (phoneuz.length < 12 || phoneuz.length === 0) {
             b = false
             setErrorNumber(true)
@@ -86,7 +84,7 @@ const Login = () => {
             b = false
             setErrorFISH(true)
         }
-        if (pasword.length < 5 || pasword.length === 0) {
+        if (pasword.length < 8 || pasword.length === 0) {
             b = false
             setErrorPassword(true)
         }
@@ -94,6 +92,26 @@ const Login = () => {
             b = false
             setErrorPassword2(true)
         }
+
+        if (b) {
+            setLoader(true)
+
+            axios.post(Url + 'api/v1/reg/', {
+                fullname: FISH,
+                phone: phoneuz,
+                password: pasword,
+                password2: ReturnPas
+            })
+                .then(res => {
+                    localStorage.setItem('token', res.data.token)
+                    console.log(res.data);
+                    Navigate('/subject')
+                })
+                .catch(er => {
+                    setLoader(false)
+                })
+        }
+
     }
 
     return (<>
@@ -102,7 +120,11 @@ const Login = () => {
         {/* //error modal  */}
 
         {errorModal === true
-            ? <div onClick={() => { setErrorModal(false); }} className="modal"> <div className="modal_blo"><h1>Ma'lumot topilmadi qaytadan harakat qiling!</h1></div> </div>
+            ? <div onClick={() => { setErrorModal(false); }} className="modal">
+                <div className="modal_blo">
+                <i className="fas fa-exclamation-circle"></i>
+                    <h1>Ma'lumot topilmadi qaytadan harakat qiling!</h1>
+                </div> </div>
             : <div></div>
         }
 
@@ -162,7 +184,7 @@ const Login = () => {
                                         >Parolni unutdingizmi?</span>
                                     </div>
 
-                                    <input type="password" onChange={(e) => {setPasword1(e.target.value); setErrorPassword1(false)}} />
+                                    <input type="password" onChange={(e) => { setPasword1(e.target.value); setErrorPassword1(false) }} />
                                     {errorpassword1 === true ? <small style={{ color: 'red' }}>To'g'ri kiriting!</small> : <small></small>}
 
                                     {loaders === true
@@ -224,12 +246,12 @@ const Login = () => {
                                             />
 
                                             {errorNumber === true ? <small style={{ color: 'red' }}>tel number yozing!</small> : <small></small>}
-                                            <span>Password</span>
+                                            <span>Parol (kamida 8 ta belgi)</span>
                                             <input type="password" onChange={(e) => { setPasword(e.target.value); setErrorPassword(false) }} />
                                             {errorpassword === true ? <small style={{ color: 'red' }}>mukammalroq parol kirting!</small> : <small></small>}
 
 
-                                            <span>Return password</span>
+                                            <span>Parolni takrorlang</span>
                                             <input type="password" onChange={(e) => { setReturnPas(e.target.value); setErrorPassword2(false) }} />
                                             {errorpassword2 === true ? <small style={{ color: 'red' }}>parolni noto'g'ri kiritdingiz!</small> : <small></small>}
 
@@ -239,7 +261,7 @@ const Login = () => {
                                                     <div className='loader'></div>
                                                 </button>
 
-                                                : <button className='btn sendLogin' onClick={() => { SendPost(); }}>
+                                                : <button className='btn sendLogin' onClick={() => SendPost()}>
                                                     Yuborish
                                                 </button>
                                             }

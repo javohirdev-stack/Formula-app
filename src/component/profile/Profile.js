@@ -1,12 +1,34 @@
 
+import axios from "axios";
+import { useState, useEffect } from "react";
+import { token, Url } from "../../helpers/URL";
 import Header from "../Header";
 import LeftMenu from "./LeftMenu";
 import './Profile.css'
 const Profile = () => {
     let prof = 'prof'
+    //profile information 
+    const [profile, setProfile]=useState([])
+
+    useEffect(()=>{
+      Profile()
+    }, [])
+    const Profile=()=>{
+        axios.get(Url+'api/v1/reg/', {
+            headers: {
+                Authorization: 'Bearer ' + token
+            }
+        })
+        .then(res=>{
+            console.log(res);
+            console.log('salom');
+        })
+        
+    }
     return (<>
         <Header prof={prof} />
 
+       
         <section className="Profile">
 
             <LeftMenu />
@@ -14,7 +36,7 @@ const Profile = () => {
             <div className="rightmenu">
                 <div className="container-fluid mt-5">
                     <div className="row d-flex justify-content-center">
-                        <div className="col-md-7">
+                        <div className="col-md-9 col-sm-9">
                             <div className="card p-3 py-4">
                                 <div className="text-center"> <img src="https://i.imgur.com/bDLhJiP.jpg" width="100" className="rounded-circle" /> </div>
                                 <div className="text-center mt-3"> <span className="bg-secondary p-1 px-4 rounded text-white">Pro</span>

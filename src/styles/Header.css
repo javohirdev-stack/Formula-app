@@ -14,7 +14,7 @@ body {
     position: fixed;
     top: 0;
     z-index: 999;
-    backdrop-filter: blur(6px);
+   filter:drop-shadow(1px -11px 9px gray);
     align-items: center;
 }
 

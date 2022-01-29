@@ -38,7 +38,13 @@ const Subject = ({ Left }) => {
         <Header Ball={info} />
 
         {errorModal === true
-            ? <div onClick={()=> {setErrorModal(false); window.location = window.location.href} } className="modal"> <div className="modal_blo"><h1>Internet bilan muommo!</h1></div> </div>
+            ? <div
+                onClick={() => { setErrorModal(false); window.location = window.location.href }}
+                className="modal">
+                <div className="modal_blo">
+                    <i className="fas fa-exclamation-triangle"></i>
+                    <h1>Internet bilan muommo!</h1>
+                </div> </div>
             : <div></div>
         }
 

@@ -24,7 +24,10 @@
     background: rgba(4, 9, 49, 0.664);
     transition: 0.30s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-
+.modal_blo h1{
+    font-size: 1.5rem;
+    margin: 20px 0;
+}
 .modal_blo p{
     width: 500px;
 }
@@ -72,7 +75,7 @@
 
 @media (max-width:576px){
     .modal_blo h1{
-        font-size: 1rem;
+        font-size: 0.9rem !important;
     }
     .modal_blo p{
         width: 300px;

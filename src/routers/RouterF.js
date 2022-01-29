@@ -5,6 +5,7 @@ import Home from '../component/Home';
 import Login from '../component/Login';
 import NotFound from '../component/NotFound';
 import Profile from '../component/profile/Profile';
+import Result from '../component/profile/Result';
 import Subject from '../component/Subject';
 const RouterF = () => {
     return (<>
@@ -13,6 +14,7 @@ const RouterF = () => {
             <Route path={'/login'} element={<Login />} />
             <Route path={'/subject'} element={<Subject />} /> 
             <Route path={'/profile'} element={<Profile/>} />
+            <Route path={'/results'} element={<Result/>} />
             <Route path={'/subject/:name'} element={<Game />} />
            
             <Route path={'/subject/:name'} element={<NotFound />} />
