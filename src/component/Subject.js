@@ -4,12 +4,12 @@ import '../styles/Subject.css'
 import SubjectCard from "./subjectCard/SubjectCard";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Url } from "../helpers/URL";
+import { Url, token } from "../helpers/URL";
 import '../styles/Game.css'
 const Subject = ({ Left }) => {
     const [info, setInfo] = useState([])
     const [loading, setLoading] = useState(false)
-
+    
     //errrorModal 
     const [errorModal, setErrorModal] = useState(false)
 
@@ -19,7 +19,11 @@ const Subject = ({ Left }) => {
 
 
     const SubjectGET = () => {
-        axios.get(Url + 'api/v1/science-list/')
+        axios.get(Url + 'api/v1/science-list/', {
+            headers: {
+                Authorization: 'Bearer ' + token
+            }
+        })
             .then(res => {
                 setInfo(res.data)
                 console.log(res.data);

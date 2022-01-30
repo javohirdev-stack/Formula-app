@@ -47,12 +47,13 @@ const Login = () => {
             b = false
             setErrorNumber1(true)
         }
-        if (pasword1.length < 8|| pasword1.length===0) {
+        if (pasword1.length < 8 || pasword1.length === 0) {
             b = false
             setErrorPassword1(true)
         }
         if (b) {
             setLoaders(true)
+            localStorage.removeItem('token')
             axios.post(Url + "login/", {
                 phone: phoneuz1,
                 password: pasword1
@@ -62,6 +63,8 @@ const Login = () => {
                     const token = res.data.token
                     localStorage.setItem("token", token)
                     Navigate('/subject')
+            window.location = window.location.href 
+
                 })
                 .catch(er => {
                     setErrorModal(true)
@@ -95,7 +98,8 @@ const Login = () => {
 
         if (b) {
             setLoader(true)
-
+            localStorage.removeItem('token')
+            
             axios.post(Url + 'api/v1/reg/', {
                 fullname: FISH,
                 phone: phoneuz,
@@ -106,6 +110,7 @@ const Login = () => {
                     localStorage.setItem('token', res.data.token)
                     console.log(res.data);
                     Navigate('/subject')
+                    window.location = window.location.href 
                 })
                 .catch(er => {
                     setLoader(false)
@@ -122,7 +127,7 @@ const Login = () => {
         {errorModal === true
             ? <div onClick={() => { setErrorModal(false); }} className="modal">
                 <div className="modal_blo">
-                <i className="fas fa-exclamation-circle"></i>
+                    <i className="fas fa-exclamation-circle"></i>
                     <h1>Ma'lumot topilmadi qaytadan harakat qiling!</h1>
                 </div> </div>
             : <div></div>

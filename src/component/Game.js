@@ -6,7 +6,9 @@ import GameCard from './GameCard/GameCard';
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import _, { set, sortedIndex } from 'lodash';
+import { createStandaloneToast } from '@chakra-ui/react'
 import '../styles/Game.css'
+import { token, Url } from '../helpers/URL';
 
 const statistica = [
     {
@@ -17,6 +19,8 @@ const Game = () => {
 
     const [quest, setQuest] = useState({})
     const [Post, setPost] = useState([])
+
+    const [ball, setBall] = useState([])
     const [savol, setSavol] = useState('')
     const [javob, setJavob] = useState()
     const [formName, setFormName] = useState('')
@@ -29,11 +33,16 @@ const Game = () => {
 
     //error modal
     const [errorModal, setErrorModal] = useState(false)
-
+    //restart state 
+    const [rest, setRest] = useState(false)
 
     // loader
     const [loading, setLoading] = useState(false)
+    const [butloading, setbutLoading] = useState(false)
     const { name } = useParams()
+
+    // images length 
+    const length = _.get(quest, 'images', []).length
 
     useEffect(() => {
         QuestGET(name)
@@ -41,7 +50,11 @@ const Game = () => {
 
 
     const QuestGET = (name) => {
-        axios.get(`http://apiphysics.dilshodbaxriddinov.uz/api/v1/question-list/${name}`)
+        axios.get(Url + `api/v1/question-list/${name}`, {
+            headers: {
+                Authorization: 'Bearer ' + token
+            }
+        })
             .then(res => {
                 console.log(res.data);
                 setQuest(res.data)
@@ -56,6 +69,37 @@ const Game = () => {
         setLoading(true)
     }
 
+    //answer post 
+    const AnswerPost = () => {
+        if (Post.length === length) {
+            setbutLoading(true)
+            axios.post(Url + 'api/v1/check-answers/', {
+                science: name,
+                answers: Post
+            }, {
+                headers: {
+                    Authorization: 'Bearer ' + token
+                }
+            })
+                .then(res => {
+                    setbutLoading(false)
+                    setBall(res.data)
+                    console.log(res);
+                    setRest(true)
+                })
+        } else {
+
+            const toast = createStandaloneToast()
+
+            toast({
+                title: "Loqayd bo'lmang!",
+                description: "Topshiriqni to'liq bajaring!",
+                status: 'info',
+                duration: 3000,
+            })
+        }
+
+    }
 
     //Ppost backend 
     const Pushs = () => {
@@ -68,8 +112,9 @@ const Game = () => {
     }
 
     console.log(Post);
+
     return (<>
-        <Header Ball={statistica} game={statistica} />
+        <Header Ball={statistica} ball={ball} game={statistica} />
 
         {/* //errror modal  */}
         {errorModal === true
@@ -77,7 +122,7 @@ const Game = () => {
                 onClick={() => { setErrorModal(false); window.location = window.location.href }}
                 className="modal">
                 <div className="modal_blo">
-                <i className="fas fa-exclamation-triangle"></i>
+                    <i className="fas fa-exclamation-triangle"></i>
                     <h1>Internet bilan muommo!</h1>
                 </div> </div>
             : <div></div>
@@ -139,8 +184,25 @@ const Game = () => {
                         </div>
 
                     ))}
-                    <div className="col-lg-12">
-                        <button className='btn btns'>Yuborish</button>
+                    <div className="col-lg-12 d-flex">
+
+                        <div>
+                            {rest === true ? <button
+                                onClick={() => window.location = window.location.href}
+                                className='btn btns'><i className="fas fa-undo-alt"></i>
+                            </button>
+
+                                : <div>
+                                    {butloading === true
+
+                                        ? <button className='btn btns' >
+                                            <div className='loader'></div>
+                                        </button>
+                                        : <button onClick={() => AnswerPost()} className='btn btns'>Yuborish</button>
+                                    }
+                                </div>}
+
+                        </div>
                     </div>
                 </div>
             </div>

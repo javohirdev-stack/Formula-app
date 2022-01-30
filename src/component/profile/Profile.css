@@ -16,10 +16,39 @@
 }
 .rightmenu{
     width: 100%;
-    padding-top: 70px;
+    height: 100vh;
+   overflow-y: scroll;
+    padding-top: 68px;
     display: flex;
     justify-content: center;
     background: #f9f6f9;
+}
+
+.rightmenu .result{
+    border-radius: 6px;
+    background: #fff;
+    padding: 20px;
+}
+.rightmenu .result nav{
+    background: #fff;
+    padding: 10px 5px;
+    
+    top: 0;
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+.rightmenu .result nav button{
+    background: rgba(0, 0, 255, 0.541);
+    padding: 5px 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: white;
+    border-radius: 6px;
+}
+.rightmenu .result nav button:hover{
+    background: rgb(0, 0, 255);
+
 }
 .rightmenu .images{
     width: 50%;
@@ -151,6 +180,12 @@
     color: #fff;
     height: 40px
 }
+ 
+@media (max-width:992px){
+    .rightmenu{
+  padding-top: 100px;
+    }
+}
 
 @media (max-width:756px) {
     .Profile .LeftMenu {
@@ -224,5 +259,15 @@
         color: black;
     }
 
+    /* =============filtr buttons */
+    .rightmenu .result nav button {
+        font-size: 13px;
+    }
+    .rightmenu .result nav{
+        justify-content: space-around;
+        flex-wrap: wrap;
+        padding: 5px;
+        gap: 10px;
+    }
 
 }

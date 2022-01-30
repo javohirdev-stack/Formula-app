@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Header.css'
-
-const Header = ({ Ball, game, prof }) => {
-    const [logout, setLogOut] = useState(false)
+import _ from 'lodash'
+const Header = ({ Ball, game, prof, ball }) => {
+    const truebal = _.get(ball, 'maxball', 0) - _.get(ball, 'userball', 0)
+    const truesball= _.get(ball, 'userball', 0)
+    
     return (<>
         <header className="header">
             <nav>
@@ -17,8 +19,8 @@ const Header = ({ Ball, game, prof }) => {
                      
                         {game ?
                             <div className='Ball'>
-                                <span className='xato'>{Ball.title}</span>
-                                <span className="togri">{Ball.title}</span>
+                                <span className='xato'>{ truebal}</span>
+                                <span className="togri">{truesball}</span>
                             </div>
                             : <div></div>}
                         {Ball || prof?

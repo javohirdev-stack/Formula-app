@@ -43,7 +43,31 @@
     color: white;
     cursor: pointer;
 }
+.return{
+    width: 100px;
+    padding: 0;
+    height: 60px;
+    display: inline-block;
+}
 
+.btns{
+    width: 160px;
+    padding: 10px ;
+    display: flex;
+    justify-content: center;
+}
+.btns:hover{
+  background-color: rgba(0, 0, 255, 0.767) !important;
+}
+
+.btns .loader{ 
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 2px solid white;
+    animation: btns 0.30s linear infinite;
+    border-bottom: 2px solid transparent;
+}
 .cheked .chek{
     width: 100%;
     height: 100%;
@@ -84,5 +108,12 @@
     }
     .modal_blo .fas{
         font-size: 40px;
+    }
+    .btns{
+        width: 100px;
+        padding: 6px ;
+        display: flex;
+        justify-content: center;
+        font-size: 17px;
     }
 }
