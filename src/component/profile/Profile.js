@@ -23,7 +23,7 @@ const Profile = () => {
         setLoader(true)
         axios.get(Url + 'api/v1/my-paige/', {
             headers: {
-                Authorization: 'Bearer ' + token
+                Authorization: 'Bearer ' + token()
             }
         })
             .then(res => {
@@ -58,16 +58,7 @@ const Profile = () => {
                                         {loader === true
 
                                             ? <div className=" d-flex justify-content-center">
-                                                <ChakraProvider>
-                                                    <Spinner
-                                                        thickness='4px'
-                                                        speed='0.65s'
-                                                        emptyColor='gray.200'
-                                                        color='blue'
-                                                        size='lg'
-
-                                                    />
-                                                </ChakraProvider>
+                                               <div className="spiner"></div>
                                             </div>
 
 

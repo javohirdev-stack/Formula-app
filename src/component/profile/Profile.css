@@ -14,6 +14,23 @@
     padding-top: 100px;
 
 }
+.spiner{
+    width: 30px;
+    height: 30px;
+    border: 4px solid blue;
+    border-radius: 50%;
+    border-bottom: 4px solid rgba(241, 243, 243, 0.884);
+    border-right: 4px solid rgba(241, 243, 243, 0.884);
+    animation: spin 0.50s linear infinite;
+}
+@keyframes spin{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
 .rightmenu{
     width: 100%;
     height: 100vh;
@@ -24,6 +41,13 @@
     background: #f9f6f9;
 }
 
+.rightmenu select{
+    text-transform: none;
+    border: none;
+    background: #0000ff8a;
+    border-radius: 6px;
+    color: white !important;
+}
 .rightmenu .result{
     border-radius: 6px;
     background: #fff;

@@ -5,9 +5,9 @@ import '../styles/Subject.css'
 import GameCard from './GameCard/GameCard';
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
-import _, { set, sortedIndex } from 'lodash';
-import { createStandaloneToast } from '@chakra-ui/react'
-import '../styles/Game.css'
+import _, { remove, set, sortedIndex, unset } from 'lodash';
+import { createStandaloneToast } from '@chakra-ui/react';
+import '../styles/Game.css';
 import { token, Url } from '../helpers/URL';
 
 const statistica = [
@@ -15,6 +15,8 @@ const statistica = [
         name: "samar"
     }
 ]
+
+
 const Game = () => {
 
     const [quest, setQuest] = useState({})
@@ -44,15 +46,17 @@ const Game = () => {
     // images length 
     const length = _.get(quest, 'images', []).length
 
+
     useEffect(() => {
         QuestGET(name)
+
     }, [])
 
 
     const QuestGET = (name) => {
         axios.get(Url + `api/v1/question-list/${name}`, {
             headers: {
-                Authorization: 'Bearer ' + token
+                Authorization: 'Bearer ' + token()
             }
         })
             .then(res => {
@@ -78,7 +82,7 @@ const Game = () => {
                 answers: Post
             }, {
                 headers: {
-                    Authorization: 'Bearer ' + token
+                    Authorization: 'Bearer ' + token()
                 }
             })
                 .then(res => {
@@ -111,7 +115,26 @@ const Game = () => {
         document.getElementById(savol).classList.add('cheked')
     }
 
-    console.log(Post);
+    //deletes 
+
+    // const deletes = (text, id) => {
+    //      let news =[]
+    //     Post.forEach((item, index) => {
+    //         if (item.id === id) {
+    //             setDay(item.slug)
+    //         }
+    //     })
+    //     Post.forEach(item => {
+    //         if (item.id !== id) {
+    //          news.push(item)
+    //         }
+    //     })
+    //     document.getElementById(id + "quest").classList.remove('cheked')
+    //     document.getElementById(text).innerHTML = ''
+    //     document.getElementById(day).classList.remove('cheked')
+    //     setPost(news)
+    // }
+    // console.log(Post);
 
     return (<>
         <Header Ball={statistica} ball={ball} game={statistica} />
@@ -171,7 +194,11 @@ const Game = () => {
                     {_.get(quest, 'images', []).map((item, index) => (
                         <div className="col-lg-3 col-md-4 col-sm-6 col-12">
                             <div id={item.id + "quest"}>
-                                <div className='chek'> <small id={index}></small></div>
+                                <div className='chek'>
+                                    <small id={index}></small>
+
+                                </div>
+
                                 <div
                                     style={javob === item.id ? { transform: 'scale(0.9)', transition: '0.30s ease' } : {}}
                                     onClick={() => { setJavob(item.id); setJavobTrue(true); setIndex(index) }} >

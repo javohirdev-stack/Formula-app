@@ -21,7 +21,7 @@ const Subject = ({ Left }) => {
     const SubjectGET = () => {
         axios.get(Url + 'api/v1/science-list/', {
             headers: {
-                Authorization: 'Bearer ' + token
+                Authorization: 'Bearer ' + token()
             }
         })
             .then(res => {

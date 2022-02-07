@@ -63,7 +63,8 @@ const Login = () => {
                     const token = res.data.token
                     localStorage.setItem("token", token)
                     Navigate('/subject')
-            window.location = window.location.href 
+                    console.log(res);
+                    // window.location = window.location.href
 
                 })
                 .catch(er => {
@@ -99,7 +100,7 @@ const Login = () => {
         if (b) {
             setLoader(true)
             localStorage.removeItem('token')
-            
+
             axios.post(Url + 'api/v1/reg/', {
                 fullname: FISH,
                 phone: phoneuz,
@@ -110,7 +111,7 @@ const Login = () => {
                     localStorage.setItem('token', res.data.token)
                     console.log(res.data);
                     Navigate('/subject')
-                    window.location = window.location.href 
+                    // window.location = window.location.href
                 })
                 .catch(er => {
                     setLoader(false)
